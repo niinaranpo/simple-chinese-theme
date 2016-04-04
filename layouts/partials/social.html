@@ -1,0 +1,145 @@
+<div class="side-menu social side-menu-horizontal">
+  <ul class="menu-list">
+
+    <li class="menu-item">
+      <a class="side-menu-link" href="{{ .Site.BaseURL }}index.xml"><i class="fa fa-rss fa-fw"></i><span>RSS</span></a>
+    </li>
+
+    {{ with .Site.Social.email }}
+    <li class="menu-item">
+    <a class="side-menu-link" href="mailto:{{ . }}">
+      <i class="fa fa-envelope-square fa-fw"></i><span>email</span></a>
+    </li>
+    {{ end }}
+
+    {{ with .Site.Social.github }}
+    <li class="menu-item">
+      <a class="side-menu-link" href="https://github.com/{{ . }}" target="_blank"><i class="fa fa-github-square fa-fw"></i><span>GitHub</span></a>
+    </li>
+    {{ end }}
+
+    {{ with .Site.Social.twitter }}
+    <li class="menu-item">
+      <a class="side-menu-link" href="https://twitter.com/{{ . }}" target="_blank"><i class="fa fa-twitter-square fa-fw"></i><span>Twitter</span></a>
+    </li>
+    {{ end }}
+
+    {{ with .Site.Social.facebook }}
+    <li class="menu-item">
+      <a class="side-menu-link" href="https://facebook.com/{{ . }}" target="_blank"><i class="fa fa-facebook-square fa-fw"></i><span>Facebook</span></a>
+    </li>
+    {{ end }}
+
+    {{ with .Site.Social.googleplus }}
+    <li class="menu-item">
+      <a class="side-menu-link" href="https://plus.google.com/+{{ . }}" target="_blank"><i class="fa fa-google-plus-square fa-fw"></i><span>Google+</span></a>
+    </li>
+    {{ end }}
+
+    {{ with .Site.Social.weibo }}
+    <li class="menu-item">
+      <a class="side-menu-link" href="http://weibo.com/{{ . }}" target="_blank"><i class="fa fa-weibo fa-fw"></i><span>Weibo</span></a>
+    </li>
+    {{ end }}
+
+
+    {{ with .Site.Social.instagram }}
+    <li class="menu-item">
+      <a class="side-menu-link" href="https://instagram.com/{{ . }}" target="_blank"><i class="fa fa-instagram fa-fw"></i><span>Instagram</span></a>
+    </li>
+    {{ end }}
+
+    {{ with .Site.Social.flickr }}
+    <li class="menu-item">
+      <a class="side-menu-link" href="https://flickr.com/photos/{{ . }}" target="_blank"><i class="fa fa-flickr fa-fw"></i><span>Flickr</span></a>
+    </li>
+    {{ end }}
+
+    {{ with .Site.Social.pinterest }}
+    <li class="menu-item">
+      <a class="side-menu-link" href="https://pinterest.com/{{ . }}" target="_blank"><i class="fa fa-pinterest-square fa-fw"></i><span>Pinterest</span></a>
+    </li>
+    {{ end }}
+
+    {{ with .Site.Social.youtube }}
+    <li class="menu-item">
+      <a class="side-menu-link" href="https://youtube.com/user/{{ . }}" target="_blank"><i class="fa fa-youtube-square fa-fw"></i><span>YouTube</span></a>
+    </li>
+    {{ end }}
+
+    {{ with .Site.Social.vimeo }}
+    <li class="menu-item">
+      <a class="side-menu-link" href="https://vimeo.com/{{ . }}" target="_blank"><i class="fa fa-vimeo-square fa-fw"></i><span>Vimeo</span></a>
+    </li>
+    {{ end }}
+
+    {{ with .Site.Social.vine }}
+    <li class="menu-item">
+      <a class="side-menu-link" href="https://vine.co/{{ . }}" target="_blank"><i class="fa fa-vine fa-fw"></i><span>Vine</span></a>
+    </li>
+    {{ end }}
+
+    {{ with .Site.Social.slideshare }}
+    <li class="menu-item">
+      <a class="side-menu-link" href="http://slideshare.net/{{ . }}" target="_blank"><i class="fa fa-slideshare fa-fw"></i><span>SlideShare</span></a>
+    </li>
+    {{ end }}
+
+    <!-- SNS career oriented -->
+
+    {{ with .Site.Social.linkedin }}
+    <li class="menu-item">
+      <a class="side-menu-link" href="https://linkedin.com/in/{{ . }}" target="_blank"><i class="fa fa-linkedin-square fa-fw"></i><span>LinkedIn</span></a>
+    </li>
+    {{ end }}
+
+    {{ with .Site.Social.xing }}
+    <li class="menu-item">
+      <a class="side-menu-link" href="https://xing.com/profile/{{ . }}" target="_blank"><i class="fa fa-xing-square fa-fw"></i><span>Xing</span></a>
+    </li>
+    {{ end }}
+
+
+    {{ with .Site.Social.reddit }}
+    <li class="menu-item">
+      <a class="side-menu-link" href="https://reddit.com/user/{{ . }}" target="_blank"><i class="fa fa-reddit-square fa-fw"></i><span>Reddit</span></a>
+    </li>
+    {{ end }}
+
+    {{ with .Site.Social.hackernews }}
+    <li class="menu-item">
+      <a class="side-menu-link" href="https://news.ycombinator.com/user?id={{ . }}" target="_blank"><i class="fa fa-hacker-news fa-fw"></i><span>Hacker News</span></a>
+    </li>
+    {{ end }}
+
+
+
+    {{ with .Site.Social.bitbucket }}
+    <li class="menu-item">
+      <a class="side-menu-link" href="https://bitbucket.org/{{ . }}" target="_blank"><i class="fa fa-bitbucket-square fa-fw"></i><span>Bitbucket</span></a>
+    </li>
+    {{ end }}
+
+    {{ with .Site.Social.stackoverflow }}
+    <li class="menu-item">
+      <a class="side-menu-link" href="https://stackoverflow.com/users/{{ . }}" target="_blank"><i class="fa fa-stack-overflow fa-fw"></i><span>Stack Overflow</span></a>
+    </li>
+    {{ end }}
+
+
+
+    <!-- <hr/>
+    {{ with .Site.Social.steam }}
+    <li class="menu-item">
+      <a class="side-menu-link" href="https://steamcommunity.com/id/{{ . }}" target="_blank"><i class="fa fa-steam fa-fw"></i><span>steam</span></a>
+    </li>
+    {{ end }}
+
+    {{ with .Site.Social.zhihu }}
+    <li class="menu-item">
+      <a class="side-menu-link" href="https://www.zhihu.com/people/{{ . }}" target="_blank"><img class="fa" src="{{ "/css/iconfont-zhihu.svg" | absURL }}" width="17px" height="17px" /></i><span>zhihu</span></a>
+    </li>
+    {{ end }} -->
+
+  </ul>
+</div>

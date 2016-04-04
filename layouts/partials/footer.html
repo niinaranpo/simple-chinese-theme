@@ -1,0 +1,73 @@
+</div>
+  {{ partial "copyright.html" . }}
+<script src="{{ "/js/moment.min.js" | absURL }}"></script>
+<script src="/js/highlight.pack.js"></script>
+<script type="text/javascript">
+hljs.initHighlightingOnLoad();
+moment.locale('zh-cn', {
+  months : "01 月_02 月_03 月_04 月_05 月_06 月_07 月_08 月_09 月_10 月_11 月_12 月".split("_"),
+  weekdays : "星期一_星期二_星期三_星期四_星期五_星期六_星期日".split("_"),
+  longDateFormat : {
+      LT : "HH:mm",
+      LTS : "HH:mm:ss",
+      L : "DD/MM/YYYY",
+      LL : "D MMMM YYYY",
+      LLL : "D MMMM YYYY LT",
+      LLLL : "dddd D MMMM YYYY LT"
+  },
+  ordinal : function (number) {
+      if ( number < 10 ) {
+        return "0"+ number + " 日";
+      }else {
+        return number + " 日";
+      }
+  },
+  meridiem : function (hour) {
+      if (hour < 5){
+          return "凌晨"
+      } else if ( hour < 8) {
+          return "早上";
+      } else if (hour < 11 && minute < 30) {
+          return "上午";
+      } else if (hour < 13 && minute < 30) {
+          return "中午";
+      } else if (hour < 18) {
+          return "下午";
+      } else {
+          return "晚上";
+      }
+  }
+});
+(function () {
+    var time = document.getElementsByTagName('time');
+    for (var a in time){
+      time[a].innerHTML = moment(time[a].innerText).format("YYYY 年 MMMM Do");
+    }
+})();
+(function () {
+    var topic = document.getElementById('topic');
+    if (window.location.pathname === '/topics/') {
+            topic.className = 'fa fa-folder-open fa-fw';
+    }
+})();
+(function () {
+    var dir = document.getElementsByTagName('H2');
+    var container = document.getElementById('directory');
+    if ( container != null ) {
+        for (var a = 1; a < dir.length; a++ ) {
+          var tempA = document.createElement('a');
+          var node = document.createTextNode(dir[a].innerText);
+          var tempLi = document.createElement('li');
+          tempA.appendChild(node);
+          targ = '#'+dir[a].id;
+          tempA.setAttribute('herf',targ);
+          tempA.href=targ;
+          tempLi.appendChild(tempA);
+          container.appendChild(tempLi);
+      }
+    }
+})();
+</script>
+{{ partial "google_analytics.html" . }}
+</body>
+</html>

@@ -1,0 +1,12 @@
+name = "simple-chinese-theme"
+license = "MIT"
+licenselink = "https://github.com/niinaranpo/simple-chinese-theme/blob/master/LICENSE"
+description = "A simple chinese Hugo theme"
+homepage = "https://github.com/niinaranpo/simple-chinese-theme"
+tags = ["blog", "chinese", "personal"]
+features = ["blog", "chinese", "personal"]
+min_version = 0.15
+
+[author]
+  name = "niinaranpo"
+  homepage = "https://github.com/niinaranpo"

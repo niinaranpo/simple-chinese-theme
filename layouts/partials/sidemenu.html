@@ -1,0 +1,33 @@
+<!-- Menu toggle -->
+<!-- Hamburger icon -->
+<!-- <a id="menuLink" class="menu-link">
+  <span></span>
+</a> -->
+<div id="menu">
+
+    <div class="heading">
+        <a class="brand" href="/">{{ .Site.Params.brand }}</a>
+        <div class="subtitle">{{ .Site.Params.subtitle }}</div>
+    </div>
+    <div class="side-menu">
+        <ul class="menu-list menu">
+            {{ range .Site.Menus.main }} {{ if .HasChildren }}
+            <li class="menu-item side-menu-has-children">
+                <a class="side-menu-link" href="#">{{ .Pre }}{{ .Name }}</a>
+                <ul class="side-menu-children">
+                    {{ range .Children }}
+                    <li class="menu-item">
+                        <a href="{{ .URL }}">{{ .Name }}</a>
+                    </li>
+                    {{ end }}
+                </ul>
+                {{else}}
+                <li class="menu-item">
+                    <a class="side-menu-link" href="{{ .URL }}">{{ .Pre }}{{ .Name }}</a> {{end}}
+                </li>
+                {{end}}
+        </ul>
+    </div>
+
+    {{ partial "social.html" . }}
+</div>

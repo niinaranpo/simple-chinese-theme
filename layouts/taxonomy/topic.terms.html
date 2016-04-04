@@ -1,0 +1,15 @@
+{{ partial "header.html" . }}
+
+<div class="header">
+  <h1>专题</h1>
+</div>
+
+<div class="content">
+  <ul>
+  {{ $data := .Data }}
+  {{ range $key, $value := .Data.Terms.Alphabetical }}
+  <li><a href="{{ $value.Name | urlize }}">{{ $value.Name }}</a> ({{ $value.Count }})</li>
+{{ end }}
+  </ul>
+</div>
+{{ partial "footer.html" . }}

@@ -1,0 +1,78 @@
+baseurl = ""
+languageCode = "zh-Hans"
+title = ""
+theme = "simple-chinese-theme"
+author = "NiinaRanpo"
+copyright = "&copy; 2016. All rights reserved."
+canonifyurls = true
+paginate = 10
+
+[indexes]
+  tag = "tags"
+  topic = "topics"
+
+[params]
+
+  brand = ""
+  subtitle = ""
+
+  googleAnalytics = ""
+  disqus = ""
+
+  # 日期格式，如果你了解 Momentjs，请根据其标准输入格式修改
+  dateFormat = "2006-01-02T15:04:05Z07:00"
+
+[menu]
+  # 边栏内容
+  [[menu.main]]
+    name = "主页"
+    pre = "<i class='fa fa-home fa-fw'></i>"
+    weight = 0
+    identifier = "主页"
+    url = "/"
+  [[menu.main]]
+    name = "目录"
+    pre = "<i class='fa fa-list fa-fw'></i>"
+    weight = 1
+    identifier = "目录"
+    url = "/post/"
+  [[menu.main]]
+    name = "标签"
+    pre = "<i class='fa fa-tags fa-fw'></i>"
+    weight = 2
+    url = "/tags/"
+  [[menu.main]]
+    name = "专题"
+    pre = "<i class='fa fa-folder fa-fw' id='topic'></i>"
+    weight = 3
+    url = "/topics/"
+  [[menu.main]]
+    name = "关于"
+    pre = "<i class='fa fa-user fa-fw'></i>"
+    weight = 4
+    identifier = "about"
+    url = "/about/"
+
+[social]
+  # 将你在某社交网络的帐号或者ID填写到对应位置
+   twitter = ""
+   # facebook = "*"
+   # googleplus = "*"
+   weibo = ""
+   steam = ""
+   zhihu = ""
+   email = ""
+   # instagram = "*"
+   # flickr = "*"
+   # pinterest = "*"
+   # youtube = "*"
+   # vimeo = "*"
+   # vine = "*"
+   # slideshare = "*"
+   # linkedin = "*"
+   # xing = "*"
+   # reddit = "*"
+   # hackernews = "*"
+   github = ""
+   # bitbucket = "*"
+   # stackoverflow = "*"

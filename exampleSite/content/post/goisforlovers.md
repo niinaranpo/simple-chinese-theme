@@ -7,8 +7,9 @@ tags = [
     "templates",
     "themes",
     "development",
+    "Template"
 ]
-date = "2014-04-02"
+date = "2015-04-02"
 categories = [
     "Development",
     "golang",

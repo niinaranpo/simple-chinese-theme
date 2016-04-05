@@ -1,5 +1,4 @@
 <div class="warning">
-<i class="fa fa-ban"></i>
-<p>{{ .Get "title" }}</p>
+<p><i class="fa fa-ban"></i>{{ .Get "title" }}</p>
 <p>{{ printf "%s" .Inner | markdownify }}</p>
 </div>

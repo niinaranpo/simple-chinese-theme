@@ -1,9 +1,37 @@
 @import "normalize.scss";
 
+
+$pure-white: #fff;
+$white: #f8f8f8;
+$lighterGrey: #aaa;
+$font-color: #666;
+$note-bgcolor: #fafad2;
+$warning-bgcolor: #f06c67;
+$side-menu-bgcolor: #131313;
+$link-color: #2F77AB;
+
+
+@function _border(
+        $width: 1px,
+        $color: $lighterGrey,
+        $style: solid
+) {
+    @return $width $style $color;
+}
+
+@mixin single_border(
+        $local,
+        $width: 1px,
+        $color: $lighterGrey,
+        $style: solid
+) {
+    border-#{$local}: $width $style $color;
+}
+
 html {
   font-family: "SF UI Display", ".PingFang SC","PingFang SC", "Neue Haas Grotesk Text Pro", "Arial Nova", "Segoe UI", "Microsoft YaHei", "Microsoft JhengHei", "Helvetica Neue", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "Hiragino Sans GB", sans-serif;
   height:100%;
-  color: #666;
+  color: $font-color;
 }
 body {
   padding: 0;
@@ -21,35 +49,28 @@ a {
 }
 a.copyright,{
 	&:link,&:visited, &:hover, &:active{
-		color: #fff;
+		color: $pure-white;
 	}
 }
-
 img {
   border-style: none;
   max-width: 80%;
   margin: 0 10%;
 }
-
-
-
-$side-menu-bgcolor: #131313;
-
-
 time{
 	font-family: Courier;
 	letter-spacing: -0.1rem;
 }
 blockquote{
-	border-left: #aaa 5px solid;
+	@include single_border($local: left,$width: 5px);
 	text-indent: 2rem;
-	background-color: #f8f8f8;
+	background-color: $white;
 	padding: 0 2rem;
 }
 code{
-    background-color: #f8f8f8;
+    background-color: $white;
 	padding: 2px;
-	border: 1px #aaa solid;
+	border: _border();
 	border-radius:3px;
 }
 
@@ -59,12 +80,11 @@ code{
 	left: 0;
 	bottom: 0;
 	background-color: $side-menu-bgcolor;
-
 }
 
 
 #menu{
-	color: #aaa;
+	color: $lighterGrey;
 	margin-left: 0px;
 	top: 0;
 	width: 11rem;
@@ -84,7 +104,7 @@ code{
 		left: 0;
 		margin: 0;
 		padding-left: 1rem;
-		border-top: 1px #555 solid;
+		border-top: _border($color: #555);
 		line-height: 2.1rem;
 		letter-spacing: 0.5rem;
 	}
@@ -168,19 +188,18 @@ code{
 		  margin: 0;
 		  text-align: center;
 		  padding: 1rem 2rem 0;
-		  border-bottom: 1px solid #eee;
 		  h1{
 			  font-weight: normal;
 		  }
 		  h2{
-			  color: #aaa;
+			  color: $lighterGrey;
 			  font-weight: lighter;
 		  }
 	}
 
  	a{
 		&:link, &:visited, &:hover, &:active{
-		color: #2F77AB;
+		color: $link-color;
 		}
 	}
 	pre{
@@ -189,6 +208,7 @@ code{
 		}
 	}
 	.content{
+        @include single_border($local: top,$color: #eee);
 		margin: 0 auto;
 		padding: 0 2rem;
 		max-width: 800px;
@@ -204,8 +224,8 @@ code{
 		display: block;
 		overflow: auto;
 		line-height: 4rem;
-		border-top: 1px #aaa solid;
-		border-bottom: 1px #aaa solid;
+		@include single_border($local: top);
+		@include single_border($local: bottom);
 		font-size: 1rem;
 	}
 	.prev{
@@ -219,16 +239,16 @@ code{
 		padding-right: 1rem;
 	}
 	.note{
-		background-color: #fafad2;
+		background-color: $note-bgcolor;
 	}
 	.warning{
-		background-color: #f06c67;
+		background-color: $warning-bgcolor;
 	}
 	.note,.warning{
         padding: 0 1.5rem;
 		margin: 1rem;
 		border-radius: 1rem;
-		border: #aaa 1px solid;
+		border: _border();
 	}
 	.note,.warning{
 		i{
@@ -246,11 +266,11 @@ code{
 }
 
 .menu-copyright{
-	color: #aaa;
+	color: $lighterGrey;
 	text-align: center;
 	width: 11rem;
 	font-size: 0.7rem;
-	border-top: 1px #aaa solid;
+	@include single_border($local: top);
 	display: block;
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
@@ -267,20 +287,26 @@ code{
 }
 
 article{
-    border-bottom: #ddd 1px solid;
+    @include single_border($local: bottom,$color: #ddd);
+    margin-bottom: 1rem;
 }
 header{
     display: flex;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
     .title{
-        min-width:40%;
+        width: 60%;
+        min-width: 40%;
         height: auto;
+        margin-left: 1rem;
         display: flex;
-        align-itrems: center;
-        justify-content: left;
+        -webkit-align-items: center;
+          align-items: center;
+        -webkit-justify-content: left;
+          justify-content: left;
     }
     .post-meta-homepage{
-        margin-left: 2rem;
-        margin-top: 1rem;
+        margin: 0.5rem 1rem 0 1rem;
         flex: 1;
     }
 }
@@ -299,14 +325,14 @@ header{
     font-size: 0.7rem;
     padding: 1rem;
     text-indent: 1rem;
-    border: 1px solid #DDD;
+    border: _border($color: #ddd);
     margin-left: 1rem;
     strong {
         display: block;
-        border-bottom: #ccc 1px solid
+        @include single_border($local: bottom,$color: #ccc);
         }
     li {
-        list-style-position: inside
+        list-style-position: inside;
     }
     @media (max-width: 45rem) {
         padding: 0;

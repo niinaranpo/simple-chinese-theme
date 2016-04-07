@@ -1,3 +1,12 @@
 <div class="menu-copyright">
+    <div class="host">
+        {{ with .Site.Params.hostAff }}
+        <a href="{{ . }}">
+        {{ end }}
+        {{  with .Site.Params.hostServerImg }}
+        <img src="{{ . }}" alt="Vultr" />
+        {{ end }}
+        </a>
+    </div>
     &copy; 2016. All rights reserved.<br/>Base on<a class="copyright" href="https://gohugo.io/" target="_blank">　Hugo</a>　&　<a class="copyright" href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a>
 </div>

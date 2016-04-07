@@ -13,14 +13,20 @@ paginate = 10
 
 [params]
 
-  brand = ""
-  subtitle = ""
+  brand = "Brand"
+  subtitle = "subtitle"
 
   googleAnalytics = ""
   disqus = ""
 
   # 日期格式，如果你了解 Momentjs，请根据其标准输入格式修改
   dateFormat = "2006-01-02T15:04:05Z07:00"
+
+
+  # 托管商商标链接和推广链接
+  # hostServerImg = ""
+  # hostAff = ""
+
 
 [menu]
   # 边栏内容

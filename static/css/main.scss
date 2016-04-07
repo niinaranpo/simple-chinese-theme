@@ -104,7 +104,7 @@ code{
 		left: 0;
 		margin: 0;
 		padding-left: 1rem;
-		border-top: _border($color: #555);
+        @include single_border($local: top,$color: #555);
 		line-height: 2.1rem;
 		letter-spacing: 0.5rem;
 	}
@@ -270,19 +270,25 @@ code{
 	text-align: center;
 	width: 11rem;
 	font-size: 0.7rem;
-	@include single_border($local: top);
 	display: block;
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
 	line-height: 1.5rem;
 	@extend .left-menu ;
+    .host{
+        @include single_border($local: bottom);
+    }
 	@media (max-width: 45rem){
+        @include single_border($local: top);
 		position: absolute;
 		left: 0;
 		bottom: 0;
 		width: 100%;
 		padding: 0;
 		margin: 0;
+        .host{
+            display: none;
+        }
 	}
 }
 
